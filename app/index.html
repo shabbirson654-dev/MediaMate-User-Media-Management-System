@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <link rel="stylesheet" href="animate/animate.css">
+    <style>
+        body {
+
+            background-color: rgba(255, 255, 128, 0.9);
+        }
+
+        #page,
+        #username {
+            background-color: rgba(255, 255, 0, 0.9);
+        }
+
+        .bt {
+            background-color: rgba(255, 255, 0, 0.9);
+        }
+
+        .rd {
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="page">
+
+            <div class="row">
+                <div class="col-md-12 d-flex">
+                    <button class="btn shadow w-50 bt text-secondary " id="signup_link">Signup</button>
+                    <button class="btn shadow  w-50 bt ms-3 nav-link text-secondary" id="login_link">Login</button>
+                </div>
+            </div>
+
+
+            <div id="login" class="animate__animated animate__flipInY">
+
+                <h1 class="text-center text-secondary mt-5">Login</h1>
+
+                <form id="login_frm" autocomplete="off">
+
+                    <input type="email " placeholder="Email Id" id="login_email" required="required">
+
+                    <small id="login_email_warning">Email id is not registered</small>
+
+                    <input type="password" placeholder="Password" id="login_password" required="required">
+
+                    <small id="login_password_warning">Wrong password</small>
+
+                    <button type="submit" class="shadow-lg text-secondary mt-5 rd" id="login_btn">Login</button>
+
+                </form>
+
+
+
+            </div>
+
+            <div id="signup" class="animate__animated animate__flipInX">
+
+                <h1 align="center" class="text-secondary mt-5">Sign up</h1>
+
+                <form id="signup_frm" autocomplete="off">
+
+                    <input type="name" placeholder="Name" id="username" required="required">
+
+                    <input type="email" placeholder="Email" id="email" required="required">
+
+                    <small id="email_notice">Email id Already exist ..</small>
+
+                    <input type="number" placeholder="Phone" id="phone" required="required">
+                    <div class="d-flex justify-content-right">
+                        <input type="password" placeholder="Passowrd" id="password" required="required">
+
+                        <img src="pass.png" class="p_show d-none" alt="" width="35">
+                    </div>
+                    <small id="notice"></small>
+                    <button type="submit" class="shadow-lg text-secondary rd mt-5" id="signup_btn">Sign up</button>
+
+                </form>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--start javascript page-->
+
+    <script src="index.js"></script>
+
+    <script src="login_signup.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#password").on('input', function () {
+                $(".p_show").removeClass("d-none");
+
+            });
+            $(".p_show").click(function () {
+                if ($("#password").attr("type") == "password") {
+                    $("#password").attr("type", "text");
+                }
+                else {
+                    $("#password").attr("type", "password");
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
